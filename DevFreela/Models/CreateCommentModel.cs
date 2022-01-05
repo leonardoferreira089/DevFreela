@@ -7,6 +7,6 @@ namespace DevFreela.Models
 {
     public class CreateCommentModel
     {
-        public string ConteNt { get; set; }
+        public string Content { get; set; }
     }
 }
