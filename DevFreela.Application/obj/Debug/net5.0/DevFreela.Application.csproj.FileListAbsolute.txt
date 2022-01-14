@@ -10,3 +10,8 @@ C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\obj\Debug\net
 C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\obj\Debug\net5.0\DevFreela.Application.dll
 C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\obj\Debug\net5.0\ref\DevFreela.Application.dll
 C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\obj\Debug\net5.0\DevFreela.Application.pdb
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\bin\Debug\net5.0\DevFreela.Core.dll
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\bin\Debug\net5.0\DevFreela.Infrastructure.dll
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\bin\Debug\net5.0\DevFreela.Core.pdb
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\bin\Debug\net5.0\DevFreela.Infrastructure.pdb
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Application\obj\Debug\net5.0\DevFreela.Application.csproj.CopyComplete
