@@ -53,6 +53,10 @@ namespace DevFreela.Application.Services.Implementations
         public ProjectDetailsViewModel GetById(int id)
         {
             var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
+            if (project == null)
+            {
+                return null;
+            }
             var projectDetailViewModel = new ProjectDetailsViewModel(project.Id, project.Title, project.Description, project.TotalCost, project.StartedAt, project.FinishedAt);
             return projectDetailViewModel;
         }
