@@ -13,3 +13,6 @@ C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\obj\Debug\
 C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\obj\Debug\net5.0\DevFreela.Infrastructure.dll
 C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\obj\Debug\net5.0\ref\DevFreela.Infrastructure.dll
 C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\obj\Debug\net5.0\DevFreela.Infrastructure.pdb
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\bin\Debug\net5.0\DevFreela.Infrastructure.runtimeconfig.json
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\bin\Debug\net5.0\DevFreela.Infrastructure.runtimeconfig.dev.json
+C:\Users\Usuário\source\repos\DevFreela.API\DevFreela.Infrastructure\obj\Debug\net5.0\DevFreela.Infrastructure.genruntimeconfig.cache
