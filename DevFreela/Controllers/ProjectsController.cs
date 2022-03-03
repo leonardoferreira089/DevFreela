@@ -1,4 +1,5 @@
-﻿using DevFreela.Application.Commands.CreateProject;
+﻿using DevFreela.Application.Commands.CreateCommentCommand;
+using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.DeleteProject;
 using DevFreela.Application.InputModels;
 using DevFreela.Application.Services.Interfaces;
@@ -75,9 +76,9 @@ namespace DevFreela.Controllers
         }
 
         [HttpPost("{id}/comments")]
-        public IActionResult PostComment(int id, [FromBody] CreateCommentInputModel inputModel)
+        public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
         {
-            _projectService.CreateComment(inputModel);
+            await _mediator.Send(command);
             return NoContent();
         }
 
