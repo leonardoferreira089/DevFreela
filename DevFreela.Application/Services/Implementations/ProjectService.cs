@@ -21,12 +21,7 @@ namespace DevFreela.Application.Services.Implementations
         }
         
 
-        public void CreateComment(CreateCommentInputModel inputModel)
-        {
-            var comment = new ProjectComment(inputModel.Content, inputModel.IdProject, inputModel.IdUser);
-            _dbContext.ProjectComments.Add(comment);
-            _dbContext.SaveChanges();
-        }
+        
 
         public void Delete(int id)
         {
