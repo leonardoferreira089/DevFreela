@@ -19,13 +19,7 @@ namespace DevFreela.Application.Services.Implementations
         {
             _dbContext = dbContext;
         }
-        public int Create(NewProjectInputModel inputModel)
-        {
-            var project = new Project(inputModel.Title, inputModel.Description, inputModel.IdClient, inputModel.IdFreelancer, inputModel.TotalCost);
-            _dbContext.Projects.Add(project);
-            _dbContext.SaveChanges();
-            return project.Id;
-        }
+        
 
         public void CreateComment(CreateCommentInputModel inputModel)
         {
@@ -66,7 +60,15 @@ namespace DevFreela.Application.Services.Implementations
             {
                 return null;
             }
-            var projectDetailViewModel = new ProjectDetailsViewModel(project.Id, project.Title, project.Description, project.TotalCost, project.StartedAt, project.FinishedAt);
+            var projectDetailViewModel = new ProjectDetailsViewModel(
+                project.Id, 
+                project.Title, 
+                project.Description, 
+                project.TotalCost, 
+                project.StartedAt, 
+                project.FinishedAt,
+                project.Cliente.FullName,
+                project.Freelancer.FullName);
             return projectDetailViewModel;
         }
 
