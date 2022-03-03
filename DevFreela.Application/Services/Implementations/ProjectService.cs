@@ -19,11 +19,6 @@ namespace DevFreela.Application.Services.Implementations
         {
             _dbContext = dbContext;
         }
-        
-
-                
-
-        
 
         public List<ProjectViewModel> GetAll(string query)
         {
@@ -54,12 +49,5 @@ namespace DevFreela.Application.Services.Implementations
                 project.Freelancer.FullName);
             return projectDetailViewModel;
         }        
-
-        public void Update(UpdateProjectInputModel inputModel)
-        {
-            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == inputModel.Id);
-            project.Update(inputModel.Title, inputModel.Description, inputModel.TotalCost);
-            _dbContext.SaveChanges();
-        }
     }
 }
