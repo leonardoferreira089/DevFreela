@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace DevFreela.Application.Services.Interfaces
 {
     public interface IProjectService
-    {
-        List<ProjectViewModel> GetAll(string query);
+    {        
         ProjectDetailsViewModel GetById(int id);            
     }
 }
