@@ -1,6 +1,4 @@
 using DevFreela.Application.Commands.CreateProject;
-using DevFreela.Application.Services.Implementations;
-using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Models;
 using MediatR;
@@ -36,8 +34,7 @@ namespace DevFreela
 
             var connectionString = Configuration.GetConnectionString("DevFreelaCs");
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
-                        
-            services.AddScoped<IUserService, UserService>();                          
+                                                      
 
             services.AddControllers();
 
