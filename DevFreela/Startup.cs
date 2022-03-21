@@ -36,8 +36,7 @@ namespace DevFreela
 
             var connectionString = Configuration.GetConnectionString("DevFreelaCs");
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
-            
-            services.AddScoped<IProjectService, ProjectService>();
+                        
             services.AddScoped<IUserService, UserService>();                          
 
             services.AddControllers();

@@ -1,47 +1,45 @@
-﻿using DevFreela.Application.InputModels;
-using DevFreela.Application.Services.Interfaces;
-using DevFreela.Application.ViewModels;
-using DevFreela.Core.Entities;
+﻿using DevFreela.Application.ViewModels;
 using DevFreela.Infrastructure.Persistence;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace DevFreela.Application.Services.Implementations
+namespace DevFreela.Application.Queries.GetProjectById
 {
-    public class ProjectService : IProjectService
+    public class GetProjectByIdQueryHandler : IRequestHandler<GetProjectByIdQuery, ProjectDetailsViewModel>
     {
         private readonly DevFreelaDbContext _dbContext;
-        public ProjectService(DevFreelaDbContext dbContext)
+        public GetProjectByIdQueryHandler(DevFreelaDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-
-        public ProjectDetailsViewModel GetById(int id)
+        public async Task<ProjectDetailsViewModel> Handle(GetProjectByIdQuery request, CancellationToken cancellationToken)
         {
-            var project = _dbContext.Projects
+            var project = await _dbContext.Projects
                 .Include(project => project.Cliente)
                 .Include(project => project.Freelancer)
-                .SingleOrDefault(p => p.Id == id);
+                .SingleOrDefaultAsync(p => p.Id == request.Id);
 
             if (project == null)
             {
                 return null;
             }
             var projectDetailViewModel = new ProjectDetailsViewModel(
-                project.Id, 
-                project.Title, 
-                project.Description, 
-                project.TotalCost, 
-                project.StartedAt, 
+                project.Id,
+                project.Title,
+                project.Description,
+                project.TotalCost,
+                project.StartedAt,
                 project.FinishedAt,
                 project.Cliente.FullName,
                 project.Freelancer.FullName);
             return projectDetailViewModel;
-        }        
+        }
     }
 }
