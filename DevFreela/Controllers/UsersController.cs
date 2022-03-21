@@ -19,6 +19,7 @@ namespace DevFreela.Controllers
         public UsersController(IUserService userService, IMediator mediator)
         {
             _userService = userService;
+            _mediator = mediator;
         }
 
         [HttpGet("{id}")]

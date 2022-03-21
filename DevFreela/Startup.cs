@@ -38,8 +38,7 @@ namespace DevFreela
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
             
             services.AddScoped<IProjectService, ProjectService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<ISkillService, SkillService>();                      
+            services.AddScoped<IUserService, UserService>();                          
 
             services.AddControllers();
 
