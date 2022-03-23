@@ -37,9 +37,10 @@ namespace DevFreela
             var connectionString = Configuration.GetConnectionString("DevFreelaCs");
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddScoped<IProjectRepository, ProjectRepository>();            
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            
             services.AddScoped<ISkillRepository, SkillRepository>();
-
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddControllers();
 
             services.AddMediatR(typeof(CreateProjectCommand));
