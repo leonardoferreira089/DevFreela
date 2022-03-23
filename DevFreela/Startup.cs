@@ -1,5 +1,7 @@
 using DevFreela.Application.Commands.CreateProject;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Repositories;
 using DevFreela.Models;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -34,7 +36,9 @@ namespace DevFreela
 
             var connectionString = Configuration.GetConnectionString("DevFreelaCs");
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
-                                                      
+
+            services.AddScoped<IProjectRepository, ProjectRepository>();            
+            services.AddScoped<ISkillRepository, SkillRepository>();
 
             services.AddControllers();
 

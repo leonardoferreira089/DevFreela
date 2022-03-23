@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Infrastructure.Repositories
 {
-    public class ProjectRepository : IProjectRepository
+    public class SkillRepository : ISkillRepository
     {
         private readonly DevFreelaDbContext _dbContext;
-        public ProjectRepository(DevFreelaDbContext dbContext)
+        public SkillRepository(DevFreelaDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public async Task<List<Project>> GetAllAsync()
-        {
-            return await _dbContext.Projects.ToListAsync();
+        public async Task<List<Skill>> GetAllAsync()
+        {         
+            return await _dbContext.Skills.ToListAsync();
         }
     }
 }
