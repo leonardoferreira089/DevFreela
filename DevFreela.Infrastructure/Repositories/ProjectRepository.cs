@@ -43,13 +43,6 @@ namespace DevFreela.Infrastructure.Repositories
             return await _dbContext.Projects.SingleOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<Project> GetDetailsByIdAsync(int id)
-        {
-            return await _dbContext.Projects
-                .Include(p => p.Cliente)
-               .Include(p => p.Freelancer)
-               .SingleOrDefaultAsync(p => p.Id == id);
-        }
 
         public async Task SaveChangesAsync()
         {
@@ -58,6 +51,17 @@ namespace DevFreela.Infrastructure.Repositories
 
         public async Task StartAsync(Project project)
         {
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task FinishAsync(Project project)
+        {
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Project project)
+        {
+            project.Cancel();
             await _dbContext.SaveChangesAsync();
         }
     }
