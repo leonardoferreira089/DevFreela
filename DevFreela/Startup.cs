@@ -1,8 +1,10 @@
 using DevFreela.Application.Commands.CreateProject;
+using DevFreela.Application.Validators;
 using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Repositories;
 using DevFreela.Models;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,11 +39,11 @@ namespace DevFreela
             var connectionString = Configuration.GetConnectionString("DevFreelaCs");
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddScoped<IProjectRepository, ProjectRepository>();
-            
+            services.AddScoped<IProjectRepository, ProjectRepository>();            
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddControllers();
+
+            services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
             services.AddMediatR(typeof(CreateProjectCommand));
 

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8Ch6ayN0ZCo2XLfeT8vSZQlk6Izh56C18+TIMMqAgL/u7ONsPx374t4qbVxnVfl2QpI1J/1+4jLDn7Iq46JuSQ==",
+  "dgSpecHash": "fEfB1y1YoUO+FnWnFlMH8TVCpmssfb9DYbT2+v0Bk31FRNd9gpoDFd9y+WRRJQjF9ErwvImIJaK88K8vpfofsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuário\\source\\repos\\DevFreela.API\\DevFreela.Application\\DevFreela.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Usuário\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\Usuário\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
+    "C:\\Users\\Usuário\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
